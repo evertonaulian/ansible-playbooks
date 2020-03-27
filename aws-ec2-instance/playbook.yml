@@ -1,0 +1,7 @@
+---
+# This playbook deploys a simple ec2 instance.
+
+- hosts: all
+
+  roles:
+    - ec2-instance
