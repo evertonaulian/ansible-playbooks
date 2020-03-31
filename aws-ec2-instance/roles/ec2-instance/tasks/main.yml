@@ -1,18 +1,31 @@
 ---
-- name: Get the full list of method parameters (get_method_parameters)
-  manageiq_automate:
-    workspace: "{{ workspace }}"
-    get_method_parameters: yes
-  register: get_method_parameters
+- name: example using security group rule descriptions
+  ec2_group:
+    name: "sgansibletest"
+    description: sg with rule descriptions
+    vpc_id: vpc-0180626a
+    region: us-east-2
+    rules:
+      - proto: tcp
+        ports:
+        - 80
+        cidr_ip: 0.0.0.0/0
+        rule_desc: allow all on port 80
+
+# - name: Get the full list of method parameters (get_method_parameters)
+#   manageiq_automate:
+#     workspace: "{{ workspace }}"
+#     get_method_parameters: yes
+#   register: get_method_parameters
 
 - name: Provision instances
   ec2_instance:
     name: "public-compute-instance"
-    region: "{{ get_method_parameters.ec2_region }}"
-    instance_type: "{{ get_method_parameters.ec2_instance_type }}"
-    security_group: "{{ get_method_parameters.ec2_security_group }}"
-    image_id: "{{ get_method_parameters.ec2_image }}"
-    key_name: "{{ get_method_parameters.ec2_keypair }}"
+    region: "{{ ec2_region }}"
+    instance_type: "{{ ec2_instance_type }}"
+    security_group: "{{ ec2_security_group }}"
+    image_id: "{{ ec2_image }}"
+    key_name: "{{ ec2_keypair }}"
   register: ec2
 
 # - name: Wait for SSH to come up
