@@ -1,6 +1,0 @@
-# AWS specific variables
-# ec2_region: us-east-2
-# ec2_image: ami-0b51ab7c28f4bf5a6
-# ec2_instance_type: t2.nano
-# ec2_keypair: evertonandrade
-# ec2_security_group: default

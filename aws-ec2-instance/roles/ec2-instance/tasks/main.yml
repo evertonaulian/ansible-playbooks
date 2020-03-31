@@ -22,7 +22,7 @@
   ec2_instance:
     name: "public-compute-instance"
     region: "{{ ec2_region }}"
-    instance_type: "{{ ec2_instance_type }}"
+    instance_type: t2.micro
     security_group: "{{ ec2_security_group }}"
     image_id: "{{ ec2_image }}"
     key_name: "{{ ec2_keypair }}"
