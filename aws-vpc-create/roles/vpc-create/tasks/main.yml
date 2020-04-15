@@ -1,0 +1,20 @@
+---
+- name: create a VPC with dedicated tenancy and a couple of tags
+  ec2_vpc_net:
+    name: "{{name}}"
+    cidr_block: "{{cidr_block}}"
+    region: "{{region}}"
+    dns_hostnames: yes
+    dns_support: yes
+    multi_ok: no
+    tenancy: default
+    state: present
+  register: vpc
+
+- name: Associating an igw to vpc
+  ec2_vpc_igw:
+    vpc_id: "{{vpc.vpc.id}}"
+    # tags: 
+    #   Name: "{{name}}"
+    state: present
+  register: igw
