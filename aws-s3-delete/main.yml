@@ -1,0 +1,7 @@
+---
+# This playbook create a S3 bucket
+
+- hosts: localhost
+
+  roles:
+    - s3-delete

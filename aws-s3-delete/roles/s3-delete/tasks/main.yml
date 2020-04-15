@@ -1,0 +1,7 @@
+---
+- name: Delete a s3 bucket
+  s3_bucket:
+    region: "{{region}}"
+    name: testingnewbucketaulian
+    state: absent
+    force: yes
