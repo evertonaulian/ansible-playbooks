@@ -9,15 +9,16 @@
 - name: associate subnet to VPC
   ec2_vpc_subnet:
     vpc_id: "{{vpc_info.vpcs[0].vpc_id}}"
+    cidr: "{{ item.cidr }}"
     region: "{{ region }}"
     resource_tags:
       Name: "{{ item.name }}"
     state: absent
   register: subnet
   loop:
-    - { name: Subnet A, az: "{{ region }}a", cidr: "{{ cidr_subnet_a }}" }
-    - { name: Subnet B, az: "{{ region }}b", cidr: "{{ cidr_subnet_b }}" }
-    - { name: Subnet C, az: "{{ region }}c", cidr: "{{ cidr_subnet_c }}" }
+    - { name: Subnet A, cidr: "{{ cidr_subnet_a }}" }
+    - { name: Subnet B, cidr: "{{ cidr_subnet_b }}" }
+    - { name: Subnet C, cidr: "{{ cidr_subnet_c }}" }
   register: vpc_subnet
 
 - name: Delete the associate igw

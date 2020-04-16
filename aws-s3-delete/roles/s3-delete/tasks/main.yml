@@ -2,6 +2,6 @@
 - name: Delete a s3 bucket
   s3_bucket:
     region: "{{region}}"
-    name: testingnewbucketaulian
+    name: "{{name}}"
     state: absent
     force: yes

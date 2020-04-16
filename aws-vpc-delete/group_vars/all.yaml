@@ -2,3 +2,6 @@
 region: us-east-2
 name: AnsibleTEST
 cidr_block: 172.16.0.0/16
+cidr_subnet_a: 172.16.0.0/24
+cidr_subnet_b: 172.16.10.0/24
+cidr_subnet_c: 172.16.20.0/24

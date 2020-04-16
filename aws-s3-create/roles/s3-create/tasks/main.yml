@@ -2,5 +2,5 @@
 - name: Create a simple s3 bucket
   s3_bucket:
     region: "{{region}}"
-    name: testingnewbucketaulian
+    name: "{{name}}"
     state: present
