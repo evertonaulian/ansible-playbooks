@@ -1,4 +1,4 @@
 ---
-region: us-east-1
-name: newvpc
-cidr_block: 17.16.0.0/16
+region: us-east-2
+name: AnsibleTEST
+cidr_block: 172.16.0.0/16
