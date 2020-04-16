@@ -2,6 +2,8 @@
 # This playbook create a S3 bucket
 
 - hosts: localhost
+  gather_facts: false
 
   roles:
-    - s3-create
+    - "{{action}}"
+

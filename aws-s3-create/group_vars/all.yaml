@@ -1,3 +1,5 @@
 ---
-# region: us-east-1
-# name: 
+ region: us-east-1
+ name: naslkfjasfdk
+ action: s3-create
+# s3-delete
