@@ -1,0 +1,6 @@
+- name: Get the full list of method parameters (get_method_parameters)
+  manageiq_automate:
+    workspace: "{{ workspace }}"
+    get_method_parameters: yes
+  register: get_method_parameters
+- debug: msg="Result:"
