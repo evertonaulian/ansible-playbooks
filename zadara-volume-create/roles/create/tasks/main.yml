@@ -1,0 +1,9 @@
+---
+- name: Create a Zadara volume
+  uri:
+    url: "{{ url }}"
+    method: POST
+    body_format: json
+    headers:
+      X-Access-Key: "{{ x-access-key }}"
+    body: "{{ lookup('file','config.json') }}"
