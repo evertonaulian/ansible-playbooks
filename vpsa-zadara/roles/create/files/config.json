@@ -1,5 +1,5 @@
 {
-  "name": "{{ name}}",
+  "name": "{{ name }}",
   "capacity": "{{ capacity }}G",
   "block": "YES",
   "pool": "pool-00010001",
