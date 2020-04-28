@@ -1,8 +1,8 @@
 {
-  "name": "{{ name }}",
-  "capacity": "{{ capacity }}G",
+  "name": "new-volume",
+  "capacity": "100G",
   "block": "YES",
-  "pool": "pool-00010001",
+  "pool": "pool-00000001",
   "dedupe": "YES",
   "compress": "YES",
   "enableoas": "YES",
