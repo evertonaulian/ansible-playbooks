@@ -1,0 +1,10 @@
+---
+- name: Delete a Volume.
+
+  uri:
+    url: "https://{{ zadara_host }}/api/volumes/{{ volume_id }}.json"
+    method: "{{ method }}"
+    body_format: json
+    headers:
+      X-Access-Key: "{{ zadara_key }}"
+    body: "{{ lookup('file','config.json') }}"

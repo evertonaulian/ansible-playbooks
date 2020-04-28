@@ -1,0 +1,9 @@
+---
+- name: Create a Zadara volume
+  uri:
+    url: "https://{{ zadara_host }}/api/volumes/volumes.json"
+    method: "{{ method }}"
+    body_format: json
+    headers:
+      X-Access-Key: "{{ zadara_key }}"
+    body: "{{ lookup('file','config.json') }}"
