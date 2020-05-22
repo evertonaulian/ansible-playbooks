@@ -1,4 +1,4 @@
-- name: 'Istall packages'
+- name: 'Install packages'
   yum:
     name: "{{ item }}"
     state: latest
