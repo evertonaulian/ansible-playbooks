@@ -1,0 +1,31 @@
+---
+- name: Create a Zadara volume
+  uri:
+    url: "https://{{ zadara_host }}/api/volumes.json"
+    method: "{{ method }}"
+    body_format: json
+    headers:
+      X-Access-Key: "{{ zadara_key }}"
+    body: >
+      {
+        "name" : "{{ volume_name }}",
+        "capacity" : "{{ volume_capacity }}G",
+        "block": "YES",
+        "pool": "pool-00010001",
+        "dedupe": "YES",
+        "compress": "YES",
+        "enableoas": "YES",
+        "enableods": "YES",
+        "filetypestoscan": "all",
+        "includefiletypes": "jpg,png",
+        "excludefiletypes": "jpg,png",
+        "excludepath": "/tmp,/cache",
+        "autoexpand": "YES",
+        "maxcapacity": "300G",
+        "autoexpandby": "300G"
+      }
+  register: vpsa
+
+# - name: vpsa response
+#   debug:
+#     msg: "{{ vpsa.msg }}"

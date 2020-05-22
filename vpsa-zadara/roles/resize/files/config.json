@@ -1,0 +1,17 @@
+{
+  "name": "new-volume",
+  "capacity": "100G",
+  "block": "YES",
+  "pool": "pool-00000001",
+  "dedupe": "YES",
+  "compress": "YES",
+  "enableoas": "YES",
+  "enableods": "YES",
+  "filetypestoscan": "all",
+  "includefiletypes": "jpg,png",
+  "excludefiletypes": "jpg,png",
+  "excludepath": "/tmp,/cache",
+  "autoexpand": "YES",
+  "maxcapacity": "300G",
+  "autoexpandby": "300G"
+}
